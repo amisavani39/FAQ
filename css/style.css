@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -8,51 +8,51 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(hsl(292, 42%, 14%) 35%, hsl(275, 100%, 97%) 35%);
+  font-family: "Work Sans", sans-serif;
+  background-color: hsl(275, 100%, 97%);
+  background-image: url("../images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-/* Container */
+
+/* wrapper */
 .wrapper {
   width: 100%;
   padding: 20px;
 }
 
-/* Card */
+/* card */
 .card {
+  background: white;
   max-width: 600px;
   margin: auto;
-  background: hsl(0, 100%, 100%);
   border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  padding: 35px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
 }
 
+/* header */
 .faq-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
-}
-
-.faq-header img {
-  width: 30px;
+  margin-bottom: 25px;
 }
 
 .title {
   font-size: 32px;
-  font-weight: 700;
   color: hsl(292, 42%, 14%);
 }
 
-
-/* FAQ */
+/* faq */
 .faq {
-  border-bottom: 1px solid hsl(275, 100%, 97%);
   padding: 15px 0;
+  border-bottom: 1px solid #eee;
 }
 
 .question {
@@ -64,72 +64,40 @@ body {
 
 .question h3 {
   font-size: 16px;
-  font-weight: 600;
   color: hsl(292, 42%, 14%);
 }
 
-.icon {
-  font-size: 22px;
-  font-weight: 700;
-  color: hsl(292, 16%, 49%);
-}
-
 .answer {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.5;
+  margin-top: 12px;
   color: hsl(292, 16%, 49%);
+  line-height: 1.5;
   display: none;
 }
 
-/* Active */
 .faq.active .answer {
   display: block;
 }
 
-.faq.active .icon {
-  color: hsl(292, 42%, 14%);
-}
+/* mobile */
+@media(max-width:375px){
 
-/* Mobile */
-@media (max-width: 375px) {
-
-  .wrapper {
-    padding: 0;
+  body{
+    background-image: url("../images/background-pattern-desktop.svg");
   }
 
-  .card {
-    width: 100%;
-    padding: 20px;
-    border-radius: 12px;
+  .card{
+    padding:20px;
   }
 
-  .faq-header img {
-    width: 24px;
+  .title{
+    font-size:22px;
   }
 
-  .title {
-    font-size: 22px;
+  .question h3{
+    font-size:14px;
   }
 
-  .question h3 {
-    font-size: 14px;
-  }
-
-  .answer {
-    font-size: 14px;
-  }
-}
-
-
-/* Desktop */
-@media (max-width: 1024px) {
-
-  .card {
-    max-width: 550px;
-  }
-
-  .title {
-    font-size: 28px;
+  .answer{
+    font-size:14px;
   }
 }
