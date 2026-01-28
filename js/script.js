@@ -1,10 +1,17 @@
-document.querySelectorAll(".faq-question").forEach((question) => {
-  question.addEventListener("click", () => {
-    const item = question.parentElement;
+const faqs = document.querySelectorAll(".faq");
 
-    item.classList.toggle("active");
+faqs.forEach((faq) => {
+  faq.querySelector(".question").addEventListener("click", () => {
+    faqs.forEach((item) => {
+      if (item !== faq) {
+        item.classList.remove("active");
+        item.querySelector(".icon").textContent = "+";
+      }
+    });
 
-    const icon = question.querySelector(".icon");
-    icon.textContent = item.classList.contains("active") ? "−" : "+";
+    faq.classList.toggle("active");
+
+    const icon = faq.querySelector(".icon");
+    icon.textContent = faq.classList.contains("active") ? "−" : "+";
   });
 });
